@@ -68,6 +68,9 @@ export default class CellSizeAndPositionManager {
     this._cellCount = cellCount;
     this._estimatedCellSize = estimatedCellSize;
     this._cellSizeGetter = cellSizeGetter;
+    this._cellSizeAndPositionData = {};
+    this._lastMeasuredIndex = -1;
+    this._lastBatchedIndex = -1;
   }
 
   getCellCount(): number {
