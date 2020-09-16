@@ -33,11 +33,12 @@ export default function defaultCellRangeRenderer({
   // In order to work around this, ScalingCellSizeAndPositionManager compresses offsets.
   // We should never cache styles for compressed offsets though as this can lead to bugs.
   // See issue #576 for more.
-  const areOffsetsAdjusted =
-    columnSizeAndPositionManager.areOffsetsAdjusted() ||
-    rowSizeAndPositionManager.areOffsetsAdjusted();
 
-  const canCacheStyle = !isScrolling && !areOffsetsAdjusted;
+  // const areOffsetsAdjusted =
+  //   columnSizeAndPositionManager.areOffsetsAdjusted() ||
+  //   rowSizeAndPositionManager.areOffsetsAdjusted();
+
+  const canCacheStyle = false; // !isScrolling && !areOffsetsAdjusted;
 
   for (let rowIndex = rowStartIndex; rowIndex <= rowStopIndex; rowIndex++) {
     let rowDatum = rowSizeAndPositionManager.getSizeAndPositionOfCell(rowIndex);
